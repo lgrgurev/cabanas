@@ -4,55 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cabañas Meli Lauquen - Alquiler Turístico</title>
+    <!-- Importación de fuentes elegantes estilo Patagonia -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            background-color: #f9f9f9;
+            background-color: #f7f9f6;
             color: #333;
             line-height: 1.6;
         }
 
+        /* Sección Hero con fondo de imagen y filtro */
         header {
-            background: #2c5e3b;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cab1/cab11.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 20px;
+            padding: 70px 20px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
+
+            header h1 {
+                font-family: 'Playfair Display', serif;
+                font-size: 2.8rem;
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+            }
+
+            header p {
+                font-size: 1.15rem;
+                opacity: 0.95;
+                font-weight: 300;
+            }
 
         .container {
             max-width: 1200px;
             margin: auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         h2 {
             text-align: center;
-            margin: 30px 0;
+            margin-bottom: 35px;
             color: #2c5e3b;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            /* Asegura que todas las tarjetas midan lo mismo de alto en cada fila */
+            gap: 25px;
             align-items: stretch;
         }
 
+        /* Tarjetas con efectos de elevación */
         .card {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             display: flex;
-            flex-direction: column; /* Organiza la tarjeta en columna */
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+            .card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 12px 25px rgba(44, 94, 59, 0.15);
+            }
 
         /* Estilo de la imagen interactiva */
         .card-img-container {
@@ -63,62 +90,71 @@
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .card-img-container:hover img {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
 
         .ver-fotos-overlay {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.7);
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.75);
             color: white;
-            padding: 5px 10px;
+            padding: 6px 12px;
             font-size: 12px;
-            border-radius: 4px;
+            font-weight: 500;
+            border-radius: 6px;
             pointer-events: none;
+            backdrop-filter: blur(4px);
         }
 
         .card-content {
-            padding: 20px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
-            flex-grow: 1; /* Hace que el contenido ocupe todo el espacio sobrante */
+            flex-grow: 1;
         }
 
             .card-content h3 {
                 margin-bottom: 10px;
-                color: #333;
+                color: #2c5e3b;
+                font-family: 'Playfair Display', serif;
+                font-size: 1.4rem;
             }
 
             .card-content p {
                 color: #666;
                 font-size: 14px;
-                margin-bottom: 20px;
-                flex-grow: 1; /* Empuja los botones siempre hacia el fondo de la tarjeta */
+                margin-bottom: 24px;
+                flex-grow: 1;
             }
 
         .btn-container {
             display: flex;
             gap: 10px;
-            margin-top: auto; /* Fuerza que los botones se queden abajo del todo */
+            margin-top: auto;
         }
 
         .btn {
             flex: 1;
-            padding: 10px;
+            padding: 12px 10px;
             text-align: center;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
+            border-radius: 8px;
+            font-weight: 600;
             font-size: 14px;
+            transition: opacity 0.2s ease, transform 0.1s ease;
         }
+
+            .btn:active {
+                transform: scale(0.97);
+            }
 
         .btn-whatsapp {
             background-color: #25d366;
@@ -126,7 +162,7 @@
         }
 
         .btn-email {
-            background-color: #007bff;
+            background-color: #1f4e38;
             color: white;
         }
 
@@ -143,55 +179,76 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0, 0, 0, 0.85);
             justify-content: center;
             align-items: center;
             padding: 20px;
+            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 800px;
+            padding: 30px;
+            border-radius: 14px;
+            max-width: 850px;
             width: 100%;
             position: relative;
             max-height: 90vh;
             overflow-y: auto;
             text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
+
+            .modal-content h3 {
+                font-family: 'Playfair Display', serif;
+                color: #2c5e3b;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
 
         .close-modal {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
-            color: #333;
+            color: #666;
             cursor: pointer;
+            transition: color 0.2s;
         }
+
+            .close-modal:hover {
+                color: #2c5e3b;
+            }
 
         .modal-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 10px;
+            gap: 12px;
             margin-top: 15px;
         }
 
             .modal-gallery img {
                 width: 100%;
-                height: 160px;
+                height: 170px;
                 object-fit: cover;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+                transition: transform 0.3s ease;
             }
+
+                .modal-gallery img:hover {
+                    transform: scale(1.03);
+                }
 
         footer {
             background: #1a3824;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -216,8 +273,8 @@
                     <h3>Cabaña del Lago (Hasta 4 personas)</h3>
                     <p>Equipada con cocina completa, hogar a leña, Wi-Fi, quincho con parrilla a metros del Lago 4.</p>
                     <div class="btn-container">
-                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%201%20(4%20pers)" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%201%20(4%20pers)" class="btn btn-email">Email</a>
+                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%201%20(4%20pers)" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%201%20(4%20pers)" class="btn btn-email">✉️ Email</a>
                     </div>
                 </div>
             </div>
@@ -232,8 +289,8 @@
                     <h3>Cabaña del Lago (Hasta 6 personas)</h3>
                     <p>Amplia cabaña familiar de dos plantas, quincho con parrilla propia, estufa a leña y gran comodidad en un ambiente natural, a metros del Lago 4.</p>
                     <div class="btn-container">
-                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%202%20(6%20pers)" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%202%20(6%20pers)" class="btn btn-email">Email</a>
+                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%202%20(6%20pers)" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%202%20(6%20pers)" class="btn btn-email">✉️ Email</a>
                     </div>
                 </div>
             </div>
@@ -248,8 +305,8 @@
                     <h3>Cabaña Los Gurgu</h3>
                     <p>Hermosa cabaña, sobre la ruta 19 equipada con todas las comodidades para disfrutar de una estadía inolvidable, a pocas cuadras del Lago 4 y el río Las Pampas.</p>
                     <div class="btn-container">
-                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%203" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%203" class="btn btn-email">Email</a>
+                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%203" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%203" class="btn btn-email">✉️ Email</a>
                     </div>
                 </div>
             </div>
@@ -264,8 +321,8 @@
                     <h3>Cabaña Augus.To</h3>
                     <p>Espacio exclusivo rodeado de naturaleza nativa, ideal para el descanso y amantes de la pesca con mosca.</p>
                     <div class="btn-container">
-                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%204" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%204" class="btn btn-email">Email</a>
+                        <a href="https://wa.me/5492945416784?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%204" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%204" class="btn btn-email">✉️ Email</a>
                     </div>
                 </div>
             </div>
@@ -327,7 +384,7 @@
             <h3>Galería - Cabaña 4</h3>
             <div class="modal-gallery">
                 <img src="cab4/cab42.jpg" alt="Foto 2">
-                <img src="cab4/cab43.jpg" alt="Foto 4">
+                <img src="cab4/cab43.jpg" alt="Foto 3">
                 <img src="cab4/cab44.jpg" alt="Foto 4">
                 <img src="cab4/cab45.jpg" alt="Foto 5">
                 <img src="cab4/cab46.jpg" alt="Foto 6">
