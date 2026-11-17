@@ -170,7 +170,7 @@
             opacity: 0.9;
         }
 
-        /* Estilos de la ventana Modal (Galería) */
+        /* Estilos de la ventana Modal (Galería Ampliada) */
         .modal {
             display: none;
             position: fixed;
@@ -188,29 +188,29 @@
 
         .modal-content {
             background: white;
-            padding: 30px;
+            padding: 35px;
             border-radius: 14px;
-            max-width: 850px;
-            width: 100%;
+            max-width: 1100px; /* Ventana modal más ancha y grande */
+            width: 95%;
             position: relative;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
 
             .modal-content h3 {
                 font-family: 'Playfair Display', serif;
                 color: #2c5e3b;
-                font-size: 1.8rem;
-                margin-bottom: 15px;
+                font-size: 2rem;
+                margin-bottom: 20px;
             }
 
         .close-modal {
             position: absolute;
             top: 15px;
-            right: 20px;
-            font-size: 32px;
+            right: 25px;
+            font-size: 36px;
             font-weight: bold;
             color: #666;
             cursor: pointer;
@@ -223,17 +223,17 @@
 
         .modal-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Fotos más grandes y cómodas en grilla */
+            gap: 16px;
             margin-top: 15px;
         }
 
             .modal-gallery img {
                 width: 100%;
-                height: 170px;
+                height: 260px; /* Fotos de la galería mucho más grandes */
                 object-fit: cover;
-                border-radius: 8px;
-                box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.12);
                 transition: transform 0.3s ease;
             }
 
