@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabañas Las Marías - Alquiler Turístico</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9f9f9; color: #333; line-height: 1.6; }
+        header { background: #2c5e3b; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        h2 { text-align: center; margin: 30px 0; color: #2c5e3b; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card-content h3 { margin-bottom: 10px; color: #333; }
+        .card-content p { color: #666; font-size: 14px; margin-bottom: 15px; }
+        .btn-container { display: flex; gap: 10px; }
+        .btn { flex: 1; padding: 10px; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 14px; }
+        .btn-whatsapp { background-color: #25d366; color: white; }
+        .btn-email { background-color: #007bff; color: white; }
+        .btn:hover { opacity: 0.9; }
+        footer { background: #1a3824; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cabañas Las Marías</h1>
+        <p>Disfruta de la paz y la naturaleza</p>
+    </header>
+
+    <div class="container">
+        <h2>Nuestras Cabañas</h2>
+        
+        <div class="grid">
+            <!-- Cabaña 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=600&q=80" alt="Cabaña Bosque">
+                <div class="card-content">
+                    <h3>Cabaña "El Bosque" (Hasta 4 personas)</h3>
+                    <p>Equipada con cocina completa, hogar a leña, Wi-Fi, cochera cubierta y vista panorámica a las sierras.</p>
+                    <div class="btn-container">
+                        <!-- Reemplaza el número de teléfono (código de país + área + número sin + ni espacios) -->
+                        <a href="https://wa.me/5491112345678?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%20El%20Bosque" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+                        <!-- Reemplaza tu correo electrónico -->
+                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%20El%20Bosque" class="btn btn-email">Email</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cabaña 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=600&q=80" alt="Cabaña Río">
+                <div class="card-content">
+                    <h3>Cabaña "Del Río" (Hasta 6 personas)</h3>
+                    <p>Amplia cabaña familiar con 2 habitaciones, quincho con parrilla propia, aire acondicionado y acceso directo al arroyo.</p>
+                    <div class="btn-container">
+                        <a href="https://wa.me/5491112345678?text=Hola,%20me%20interesa%20consultar%20disponibilidad%20para%20la%20Cabaña%20Del%20Río" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+                        <a href="mailto:tuemail@ejemplo.com?subject=Consulta%20Cabaña%20Del%20Río" class="btn btn-email">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cabañas Las Marías - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
