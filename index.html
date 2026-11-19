@@ -337,7 +337,7 @@
         <div class="grid">
             <!-- Cabalgatas -->
             <div class="card">
-                <div class="card-img-container" onclick="abrirModal('modal-Cabalgatas')">
+                <div class="card-img-container" onclick="abrirModal('modal-cabalgatas')">
                     <img src="cabalgatas/cabal1.jpeg" alt="Cabalgatas">
                     <div class="ver-fotos-overlay">📷 Ver más fotos</div>
                 </div>
@@ -357,7 +357,7 @@
     <!-- VENTANA MODAL CABAÑA 1 -->
     <div id="modal-cabaña-1" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="cerrarModal('modal-cabaña-1')">&times;</span>
+            <span class="close-modal" onclick="cerrarModal('modal-cabaña-1')">×</span>
             <h3>Galería - Cabaña del Lago 4 Pax</h3>
             <div class="modal-gallery">
                 <img src="cab1/cab12.jpeg" alt="Foto 2">
@@ -373,7 +373,7 @@
     <!-- VENTANA MODAL CABAÑA 2 -->
     <div id="modal-cabaña-2" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="cerrarModal('modal-cabaña-2')">&times;</span>
+            <span class="close-modal" onclick="cerrarModal('modal-cabaña-2')">×</span>
             <h3>Galería - Cabaña del Lago 6 pax</h3>
             <div class="modal-gallery">
                 <img src="cab2/cab22.jpeg" alt="Foto 2">
@@ -389,7 +389,7 @@
     <!-- VENTANA MODAL CABAÑA 3 -->
     <div id="modal-cabaña-3" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="cerrarModal('modal-cabaña-3')">&times;</span>
+            <span class="close-modal" onclick="cerrarModal('modal-cabaña-3')">×</span>
             <h3>Galería - Cabaña Los Gurgu</h3>
             <div class="modal-gallery">
                 <img src="cab3/cab32.jpeg" alt="Foto 2">
@@ -405,7 +405,7 @@
     <!-- VENTANA MODAL CABAÑA 4 -->
     <div id="modal-cabaña-4" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="cerrarModal('modal-cabaña-4')">&times;</span>
+            <span class="close-modal" onclick="cerrarModal('modal-cabaña-4')">×</span>
             <h3>Galería - Cabaña Augus.To</h3>
             <div class="modal-gallery">
                 <img src="cab4/cab42.jpg" alt="Foto 2">
@@ -421,8 +421,8 @@
     <!-- VENTANA MODAL Cabalgatas -->
     <div id="modal-cabalgatas" class="modal">
         <div class="modal-content">
-            <span class="close-modal" onclick="cerrarModal('modal-cabalgatas')">&times;</span>
-            <h3>Galería - Cabaña Augus.To</h3>
+            <span class="close-modal" onclick="cerrarModal('modal-cabalgatas')">×</span>
+            <h3>Galería - Cabalgatas</h3>
             <div class="modal-gallery">
                 <img src="cabalgatas/cabal2.jpeg" alt="Foto 2">
                 <img src="cabalgatas/cabal3.jpeg" alt="Foto 3">
@@ -435,22 +435,22 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Cabañas Mely Lauquen - Todos los derechos reservados.</p>
+        <p>© 2026 Cabañas Mely Lauquen - Todos los derechos reservados.</p>
     </footer>
 
     <!-- Script de control para las ventanas modales -->
     <script>
-                                        function abrirModal(id) {
-                                            document.getElementById(id).style.display = 'flex';
-                                        }
-                                        function cerrarModal(id) {
-                                            document.getElementById(id).style.display = 'none';
-                                        }
-                                        window.onclick = function(event) {
-                                            if (event.target.classList.contains('modal')) {
-                                                event.target.style.display = 'none';
-                                            }
-                                        }
+                function abrirModal(id) {
+                    document.getElementById(id).style.display = 'flex';
+                }
+                function cerrarModal(id) {
+                    document.getElementById(id).style.display = 'none';
+                }
+                window.onclick = function(event) {
+                    if (event.target.classList.contains('modal')) {
+                        event.target.style.display = 'none';
+                    }
+                }
     </script>
 
 </body>
